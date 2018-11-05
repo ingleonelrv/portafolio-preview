@@ -67,6 +67,7 @@ h1 strong{
     height: 70px;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .menu{
@@ -110,6 +111,7 @@ figure{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .hero-img{
     object-fit: cover;
@@ -130,9 +132,10 @@ figure{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .project-details{
-    width: 500px;
+    width: 50%;
 }
 .project-title{
     font-size: 30px;
@@ -151,9 +154,11 @@ figure{
     font-size: 20px;
 }
 .project-imgContainer{
-    width: 500px;
+    width: 50%;
 }
-
+.project-imgContainer img{
+    max-width: 100%;
+}
 .event-list-title{
     margin-left: 20px;
 }
@@ -200,6 +205,7 @@ figure{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .form-email input{
     border-color: gray;
@@ -252,6 +258,7 @@ figure{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer img{
@@ -262,11 +269,75 @@ figure{
     color: white;
 }
 .container{
-    width: 1000px;
+    max-width: 1000px;
+    flex: 1; /*lo mismo que poner width:100% */
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
     align-items: inherit;
     height: inherit;
     flex-wrap: inherit;
+}
+
+/* Desktop first empezar con media query mas alto */
+/* breakpoints */
+@media screen and (max-width:1024px){
+
+}
+@media screen and (max-width:767px){
+    .header{
+        display: block;
+        height: auto;
+    }
+    .header ol{
+        display: block;
+    }
+    .header ol li{
+        height: 50px;
+    }
+    .header a{
+        justify-content: center;
+    }
+    .logo{
+        text-align: center;
+    }
+    .project{
+        display: block;
+    }
+    .project-details{
+        width: auto;
+        /* font-size: 10px; */
+    }
+    .project-title{
+        font-size: 1.5em;
+        margin-bottom: .3em 0;
+    }
+    .project-course{
+        font-size: 1.2em;
+    }
+    .project-date{
+        font-size: 1em;
+    }
+    .project-description{
+        font-size: .8em;
+    }
+    .project-url{
+        font-size: 1em;
+    }
+    .project-imgContainer{
+        width: auto;
+        text-align: center;
+    }
+    .project-course, .project-date, .project-url{
+        margin: .3em 0;
+    }
+}
+@media screen and (max-width:480px){
+    .project-details{
+        width: auto;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:320px){
+    
 }
