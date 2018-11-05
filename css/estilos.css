@@ -167,8 +167,8 @@ figure{
     flex-wrap: wrap;
 }
 .event{
-    margin: 10px;
-    width: 480px;
+    margin: 1%;
+    width: 48%;
     border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0;
@@ -282,9 +282,31 @@ figure{
 /* Desktop first empezar con media query mas alto */
 /* breakpoints */
 @media screen and (max-width:1024px){
-
+    .container{
+        padding: 0 1em;
+    }
+    .hero{
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        padding: 2em;
+    }
+    .hero-img{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    h1{
+        font-size: 2em;
+        z-index: 2;
+    }
 }
 @media screen and (max-width:767px){
+    
     .header{
         display: block;
         height: auto;
@@ -300,6 +322,7 @@ figure{
     }
     .logo{
         text-align: center;
+        overflow: hidden;
     }
     .project{
         display: block;
@@ -331,13 +354,52 @@ figure{
     .project-course, .project-date, .project-url{
         margin: .3em 0;
     }
+    .event{
+        width: auto;
+        flex-shrink: initial;
+    }
+    /* si tengo una clase .event-img y una etiqueta prevalece la etiqueta */
+    .event img{
+        width: 100%;
+    }
 }
 @media screen and (max-width:480px){
+    h1{
+        font-size: 1.5em;
+    }
     .project-details{
         width: auto;
         font-size: 12px;
     }
+    .event-details{
+        /* si no se ha cambiado el font-size del padre por defecto es 16 */
+        margin: -2em 0.5em 0.5em;
+        padding: 1em;
+    }
+    .contact{
+        height: auto;
+        padding: 1em 0;
+        text-align: center;
+        display: block;
+    }
+    .form-email button{
+        margin: 1em auto;
+    }
+    .form-email h3{
+        margin-top: 0;
+    }
+    .footer{
+        display: block;
+        text-align: center;
+        /* solucion al margin collapsing */
+        border: 1px solid transparent;
+    }
 }
 @media screen and (max-width:320px){
-    
+    h1{
+        font-size: 1.2em;
+    }
+    .hero{
+        padding: 2em 1em;
+    }
 }
