@@ -19,6 +19,7 @@
         </style> -->
     </head>
     <body>
+        <i class="icon-menu burger-button" id="burger-menu"></i>
         <header class="header">
             <div class="container">
                 <figure class="logo">
@@ -150,5 +151,32 @@
                 </div>
             </div>
         </footer>
+        <script>
+            const burgerButton=document.querySelector('#burger-menu');
+            const menu=document.querySelector('.menu');
+
+            // Busca si encuentras este media query, devuelve boolean
+            const ipad=window.matchMedia('screen and (max-width:767px)');
+            // agrego un listener que este pendiente de cuando se cumpla mi match
+            ipad.addListener(validar);
+            
+            function validar(event){
+                if(event.matches){
+                    console.log(event.matches);
+                    burgerButton.addEventListener('click',hideShow);
+                }else{
+                    console.log(event.matches);
+                    burgerButton.removeEventListener('click',hideShow);
+                }
+            }
+
+            function hideShow(){
+                if(menu.classList.contains('is-active')){
+                    menu.classList.remove('is-active');
+                }else{
+                    menu.classList.add('is-active');
+                }
+            }
+        </script>
     </body>
 </html>
